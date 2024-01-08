@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather/weather_app/core/utils/helpers.dart';
+import 'package:weather/weather_app/modules/Search/view.dart';
+import 'package:weather/weather_app/modules/home/binding.dart';
+import 'package:weather/weather_app/modules/home/view.dart';
+import 'package:weather/weather_app/modules/onboarding/binding.dart';
+import 'package:weather/weather_app/modules/onboarding/view.dart';
+import 'package:weather/weather_app/modules/splash/binding.dart';
 import 'package:weather/weather_app/modules/splash/view.dart';
+import 'package:weather/weather_app/modules/welcome/binding.dart';
+import 'package:weather/weather_app/modules/welcome/view.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -26,7 +34,27 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/',
           page: () => SplashScreen(),
-          // binding: HomeBinding(),
+          binding: SplashBinding(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => HomeScreen(),
+          binding: HomeBinding(),
+        ),
+        GetPage(
+          name: '/onboarding',
+          page: () => OnboardingScreen(),
+          binding: OnboardingBinding(),
+        ),
+        GetPage(
+          name: '/welcome',
+          page: () => WelcomeScreen(),
+          binding: WelcomeBinding(),
+        ),
+        GetPage(
+          name: '/search',
+          page: () => SearchScreen(),
+          binding: HomeBinding(),
         ),
       ],
     );

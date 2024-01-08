@@ -7,6 +7,7 @@ import 'package:weather/weather_app/core/utils/helpers.dart';
 import 'package:weather/weather_app/modules/home/controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
+  final homeCtrl = Get.put(HomeController(city: 'boumerdes'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,38 +15,6 @@ class HomeScreen extends GetView<HomeController> {
       body: GetBuilder<HomeController>(builder: (controller) {
         return Column(
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(top: 100, left: 20, right: 20),
-              child: TextField(
-                onChanged: (value) => controller.city = value,
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
-                textInputAction: TextInputAction.search,
-                onSubmitted: (value) => controller.updateWeather(),
-                decoration: InputDecoration(
-                  suffix: const Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  hintStyle: const TextStyle(color: Colors.white),
-                  hintText: 'Search'.toUpperCase(),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.white),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-
             controller.is_loading
                 ? const CircularProgressIndicator()
                 : Padding(

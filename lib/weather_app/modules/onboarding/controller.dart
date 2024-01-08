@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:weather/weather_app/core/utils/extensions.dart';
 import 'package:weather/weather_app/modules/home/binding.dart';
 import 'package:weather/weather_app/modules/home/view.dart';
+import 'package:weather/weather_app/modules/welcome/view.dart';
 
 class OnboardingController extends GetxController {
   final PageController pageController = PageController(initialPage: 0);
@@ -43,11 +44,8 @@ class OnboardingController extends GetxController {
             duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
       }
     } else {
-      Get.off(
-        HomeScreen(),
-        binding: HomeBinding(),
-        // transition: Transition.downToUp,
-        // duration: const Duration(seconds: 1),
+      Get.offNamed(
+        '/welcome',
       );
     }
   }

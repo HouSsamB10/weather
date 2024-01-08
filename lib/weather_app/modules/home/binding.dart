@@ -1,4 +1,4 @@
-import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
 import 'package:weather/weather_app/modules/home/controller.dart';
 
 class HomeBinding implements Bindings {
