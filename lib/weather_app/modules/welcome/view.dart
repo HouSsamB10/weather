@@ -26,19 +26,19 @@ class WelcomeScreen extends StatelessWidget {
               Positioned.fill(child: pages[welcomeCtrl.selectedIndex])
             ],
           ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.red,
-            onPressed: () {
-              // welcomeCtrl.selectedIndex == 1;
-              // welcomeCtrl.changeIndex(1);
-            },
-            tooltip: 'Create',
-            // ignore: prefer_const_constructors
-            child: Icon(
-              Icons.add,
-              color: Colors.white,
-            ),
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //   backgroundColor: Colors.red,
+          //   onPressed: () {
+          //     // welcomeCtrl.selectedIndex == 1;
+          //     // welcomeCtrl.changeIndex(1);
+          //   },
+          //   tooltip: 'Create',
+          //   // ignore: prefer_const_constructors
+          //   child: Icon(
+          //     Icons.add,
+          //     color: Colors.white,
+          //   ),
+          // ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: DemoBottomAppBar(

@@ -2,9 +2,11 @@ import 'package:get/get.dart';
 import 'package:weather/weather_app/data/api/services/weather_service.dart';
 import 'package:weather/weather_app/models/current_weather_data.dart';
 import 'package:weather/weather_app/models/five_days_data.dart';
+import 'package:weather/weather_app/modules/welcome/controller.dart';
 
 class HomeController extends GetxController {
   bool is_loading = true;
+  WelcomeController welcomeController = Get.put(WelcomeController());
 
   @override
   void onInit() {
@@ -20,6 +22,7 @@ class HomeController extends GetxController {
   void initState() {
     getCurrentWeatherData();
     getFiveDaysData();
+    welcomeController.changeIndex(0);
   }
 
   CurrentWeatherData currentWeatherData = CurrentWeatherData();

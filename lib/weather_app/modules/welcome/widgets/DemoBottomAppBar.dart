@@ -30,7 +30,7 @@ class DemoBottomAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(left: 40),
+                  padding: const EdgeInsets.only(left: 70),
                   child: controller.bottomIcon(
                     path: "assets/images/home.png",
                     isTapped: controller.selectedIndex == 0,
@@ -38,7 +38,7 @@ class DemoBottomAppBar extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 40),
+                  padding: const EdgeInsets.only(right: 70),
                   child: controller.bottomIcon(
                     path: "assets/images/search.png",
                     isTapped: controller.selectedIndex == 1,

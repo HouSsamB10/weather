@@ -7,11 +7,33 @@ import 'package:weather/weather_app/core/utils/helpers.dart';
 import 'package:weather/weather_app/modules/home/controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
-  final homeCtrl = Get.put(HomeController(city: 'boumerdes'));
+  // final homeCtrl = Get.put(HomeController(city: 'boumerdes'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
+      appBar: AppBar(
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: IconButton(
+            icon: const Icon(
+              Icons.dark_mode,
+            ),
+            onPressed: () {},
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+              icon: const Icon(
+                Icons.refresh,
+              ),
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ),
       body: GetBuilder<HomeController>(builder: (controller) {
         return Column(
           children: <Widget>[
@@ -45,7 +67,6 @@ class HomeScreen extends GetView<HomeController> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: <Widget>[
-                                      //TODO
                                       Container(
                                         padding: EdgeInsets.only(
                                             top: 15, left: 20, right: 20),
