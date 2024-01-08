@@ -7,7 +7,6 @@ import 'package:weather/weather_app/core/utils/helpers.dart';
 import 'package:weather/weather_app/modules/home/controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
-  // HomeController homeController = Get.put(HomeController(city: 'boumerdes'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(

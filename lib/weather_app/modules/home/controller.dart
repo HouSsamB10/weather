@@ -4,16 +4,7 @@ import 'package:weather/weather_app/models/current_weather_data.dart';
 import 'package:weather/weather_app/models/five_days_data.dart';
 
 class HomeController extends GetxController {
-  String? city;
-  String? searchText;
-
   bool is_loading = true;
-
-  CurrentWeatherData currentWeatherData = CurrentWeatherData();
-  List<CurrentWeatherData> dataList = [];
-  List<FiveDayData> fiveDaysData = [];
-
-  HomeController({required this.city});
 
   @override
   void onInit() {
@@ -30,6 +21,14 @@ class HomeController extends GetxController {
     getCurrentWeatherData();
     getFiveDaysData();
   }
+
+  CurrentWeatherData currentWeatherData = CurrentWeatherData();
+  List<CurrentWeatherData> dataList = [];
+  List<FiveDayData> fiveDaysData = [];
+  String? city;
+  String? searchText;
+
+  HomeController({required this.city});
 
   void getCurrentWeatherData() {
     WeatherService(city: '$city').getCurrentWeatherData(

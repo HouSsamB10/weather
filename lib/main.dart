@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:weather/weather_app/modules/home/binding.dart';
-import 'package:weather/weather_app/modules/home/view.dart';
+import 'package:weather/weather_app/core/utils/helpers.dart';
+import 'package:weather/weather_app/modules/splash/view.dart';
 
 void main() async {
   runApp(const MyApp());
+  DependencyInjection.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/',
-          page: () => HomeScreen(),
-          binding: HomeBinding(),
+          page: () => SplashScreen(),
+          // binding: HomeBinding(),
         ),
       ],
     );
