@@ -1,0 +1,1 @@
+// This file will be for the other application like (dashboard) in the same way as app folder.
