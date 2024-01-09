@@ -36,7 +36,7 @@ class MainWidget extends StatelessWidget {
                     child: Card(
                       color: controller.is_dark
                           ? lightBckgColor2
-                          : darkBckgdColor2,
+                          : Colors.white.withOpacity(0.3),
                       elevation: 5,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),

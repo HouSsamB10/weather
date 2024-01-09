@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/weather_app/constants.dart';
 import 'package:weather/weather_app/core/utils/extensions.dart';
 import 'package:weather/weather_app/modules/home/controller.dart';
+import 'package:weather/weather_app/modules/home/widgets/card_weather.dart';
 import 'package:weather/weather_app/modules/home/widgets/five_day_forecast.dart';
 import 'package:weather/weather_app/modules/home/widgets/main_widget.dart';
 import 'package:weather/weather_app/widgets/shared_appbar_widget.dart';
@@ -50,6 +50,26 @@ class HomeScreen extends GetView<HomeController> {
               child: Column(
                 children: <Widget>[
                   MainWidget(),
+                  // Row(
+                  //   children: [
+                  //     WeatherCard(
+                  //       cityName: 'humidity',
+                  //       temperature:
+                  //           ' ${controller.currentWeatherData.main!.humidity.toString()} %',
+                  //       image: 'assets/lotties/cloudy.json',
+                  //     ),
+                  //     WeatherCard(
+                  //       cityName: 'Rain',
+                  //       temperature: '25',
+                  //       image: 'assets/lotties/cloudy.json',
+                  //     ),
+                  //     WeatherCard(
+                  //       cityName: 'New York',
+                  //       temperature: '25',
+                  //       image: 'assets/lotties/cloudy.json',
+                  //     ),
+                  //   ],
+                  // ),
                   FiveDayForecast(fiveDayData: homeCtrl.fiveDaysData),
                 ],
               ),

@@ -4,8 +4,6 @@ import 'package:weather/weather_app/core/utils/helpers.dart';
 import 'package:weather/weather_app/modules/Search/view.dart';
 import 'package:weather/weather_app/modules/home/binding.dart';
 import 'package:weather/weather_app/modules/home/view.dart';
-import 'package:weather/weather_app/modules/onboarding/binding.dart';
-import 'package:weather/weather_app/modules/onboarding/view.dart';
 import 'package:weather/weather_app/modules/splash/binding.dart';
 import 'package:weather/weather_app/modules/splash/view.dart';
 import 'package:weather/weather_app/modules/welcome/binding.dart';
@@ -41,11 +39,6 @@ class MyApp extends StatelessWidget {
           name: '/home',
           page: () => HomeScreen(),
           binding: HomeBinding(),
-        ),
-        GetPage(
-          name: '/onboarding',
-          page: () => OnboardingScreen(),
-          binding: OnboardingBinding(),
         ),
         GetPage(
           name: '/welcome',

@@ -17,21 +17,47 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              "Weather of the World",
+              "Weather",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 248, 200, 216),
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 20),
             Lottie.asset(
-              'assets/lotties/cloudy_main.json',
+              'assets/lotties/cloudy.json',
               height: 370,
               width: double.infinity,
               frameRate: FrameRate(70),
               animate: true,
               repeat: true,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const Text(
+                  "Developed by",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(width: 3),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    "3chiro",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         )),
