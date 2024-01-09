@@ -26,7 +26,9 @@ class SharedAppBarWidget extends StatelessWidget
               fontWeight: FontWeight.bold,
               fontFamily: 'flutterfonts',
             ),
-      ),
+      ).animate().fadeIn(
+            duration: const Duration(milliseconds: 1000),
+          ),
       centerTitle: true,
       backgroundColor:
           homeCtrl.is_dark.value ? lightBackgroundColor : darkBackgroundColor,
