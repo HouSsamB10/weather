@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:weather/weather_app/constants.dart';
 import 'package:weather/weather_app/core/utils/extensions.dart';
@@ -10,63 +11,67 @@ class SharedAppBarWidget extends StatelessWidget
 
   SharedAppBarWidget({required this.title});
 
-  final homeCtrl = Get.put(HomeController(city: 'boumerdes'));
-
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.caption!.copyWith(
-              color: homeCtrl.is_dark.value ? lightTextColor : darkTextColor,
-              fontSize: 15.0.sp,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'flutterfonts',
+    return GetBuilder<HomeController>(
+      builder: (controller) {
+        return AppBar(
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.caption!.copyWith(
+                  color: controller.is_dark ? lightTextColor : darkTextColor,
+                  fontSize: 15.0.sp,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'flutterfonts',
+                ),
+          ).animate().fadeIn(
+                duration: const Duration(milliseconds: 1000),
+              ),
+          centerTitle: true,
+          backgroundColor:
+              controller.is_dark ? lightBckgColor1 : darkBckgdColor1,
+          elevation: 5,
+          leading: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: IconButton(
+              icon: Icon(
+                controller.is_dark ? Icons.language : Icons.language,
+                color: controller.is_dark
+                    ? darkBackgroundColor
+                    : lightBackgroundColor,
+              ),
+              onPressed: () {
+                controller.is_dark
+                    ? controller.is_dark = false
+                    : controller.is_dark = true;
+              },
             ),
-      ).animate().fadeIn(
-            duration: const Duration(milliseconds: 1000),
-          ),
-      centerTitle: true,
-      backgroundColor:
-          homeCtrl.is_dark.value ? lightBackgroundColor : darkBackgroundColor,
-      elevation: 5,
-      leading: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: IconButton(
-          icon: Icon(
-            homeCtrl.is_dark.value ? Icons.language : Icons.language,
-            color: homeCtrl.is_dark.value
-                ? darkBackgroundColor
-                : lightBackgroundColor,
-          ),
-          onPressed: () {
-            homeCtrl.is_dark.value
-                ? homeCtrl.is_dark.value = false
-                : homeCtrl.is_dark.value = true;
-          },
-        ),
-      ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: IconButton(
-            icon: Icon(
-              homeCtrl.is_dark.value ? Icons.dark_mode : Icons.light_mode,
-              color: homeCtrl.is_dark.value
-                  ? darkBackgroundColor
-                  : lightBackgroundColor,
-            ),
-            onPressed: () {
-              homeCtrl.is_dark.value
-                  ? homeCtrl.is_dark.value = false
-                  : homeCtrl.is_dark.value = true;
-            },
-          ),
-        ),
-      ],
+          ).animate().fadeIn(
+                duration: const Duration(milliseconds: 1000),
+              ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: IconButton(
+                icon: Icon(
+                  controller.is_dark ? Icons.dark_mode : Icons.light_mode,
+                  color: controller.is_dark
+                      ? darkBackgroundColor
+                      : lightBackgroundColor,
+                ),
+                onPressed: () {
+                  controller.changedark_light();
+                },
+              ),
+            ).animate().fadeIn(
+                  duration: const Duration(milliseconds: 1000),
+                ),
+          ],
+        );
+      },
     );
   }
 }

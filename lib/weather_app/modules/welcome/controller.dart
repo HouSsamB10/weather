@@ -21,7 +21,7 @@ class WelcomeController extends GetxController {
         duration: const Duration(milliseconds: 300),
         child: Image.asset(
           path,
-          color: isTapped ? Colors.blue : Colors.grey[500],
+          color: isTapped ? Colors.blue : Colors.white,
         ),
       ),
     );
