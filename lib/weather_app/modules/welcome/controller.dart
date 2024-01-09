@@ -14,14 +14,14 @@ class WelcomeController extends GetxController {
     bool isTapped = false,
     VoidCallback? onTap,
   }) {
-    return InkWell(
-      onTap: onTap,
-      child: AnimatedContainer(
+    return IconButton(
+      onPressed: onTap,
+      icon: AnimatedContainer(
         height: isTapped ? 35 : 25,
         duration: const Duration(milliseconds: 300),
         child: Image.asset(
           path,
-          color: isTapped ? Colors.pink[700] : Colors.grey[500],
+          color: isTapped ? Colors.blue : Colors.grey[500],
         ),
       ),
     );

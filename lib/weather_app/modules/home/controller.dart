@@ -5,6 +5,7 @@ import 'package:weather/weather_app/models/five_days_data.dart';
 import 'package:weather/weather_app/modules/welcome/controller.dart';
 
 class HomeController extends GetxController {
+  var is_dark = true.obs;
   bool is_loading = true;
   WelcomeController welcomeController = Get.put(WelcomeController());
 
