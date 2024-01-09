@@ -72,10 +72,14 @@ class HomeController extends GetxController {
   void getFiveDaysData() {
     WeatherService(city: '$city').getFiveDaysThreeHoursForcastData(
         onSuccess: (data) {
+      is_loading = true;
       fiveDaysData = data;
+      is_loading = false;
       update();
     }, onError: (error) {
+      is_loading = true;
       print(error);
+      is_loading = false;
       update();
     });
   }

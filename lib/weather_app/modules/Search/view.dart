@@ -8,37 +8,37 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: Center(
         child: GetBuilder<HomeController>(
           builder: (controller) {
             return Container(
-              padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+              padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
               child: TextField(
                 onChanged: (value) => controller.city = value,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
-                textInputAction: TextInputAction.search,
+                textInputAction: TextInputAction.done,
                 onSubmitted: (value) => controller.updateWeather(),
                 decoration: InputDecoration(
                   suffix: const Icon(
                     Icons.search,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
-                  hintStyle: const TextStyle(color: Colors.white),
+                  hintStyle: const TextStyle(color: Colors.black),
                   hintText: 'Search'.toUpperCase(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.black),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.black),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.black),
                   ),
                 ),
               ),

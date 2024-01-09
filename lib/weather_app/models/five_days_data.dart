@@ -9,11 +9,11 @@ class FiveDayData {
       return FiveDayData();
     }
 
-    var f = json['dt_txt'].split(' ')[0].split('-')[2];
-    var l = json['dt_txt'].split(' ')[1].split(':')[0];
-    var fandl = '$f-$l';
+    // var f = json['dt_txt'].split(' ')[0].split('-')[2];
+    // var l = json['dt_txt'].split(' ')[1].split(':')[0];
+    // var fandl = '$f-$l';
     return FiveDayData(
-      dateTime: '$fandl',
+      dateTime: json['dt'].toString(), //'$fandl',
       temp: (double.parse(json['main']['temp'].toString()) - 273.15).round(),
     );
   }

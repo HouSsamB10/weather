@@ -7,7 +7,7 @@ import 'package:weather/weather_app/modules/welcome/widgets/DemoBottomAppBar.dar
 
 // ignore: use_key_in_widget_constructors
 class WelcomeScreen extends StatelessWidget {
-  final welcomeCtrl = Get.put(WelcomeController());
+  // final welcomeCtrl = Get.put(WelcomeController());
 
   final pages = [
     HomeScreen(),
@@ -17,13 +17,13 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<WelcomeController>(
-      builder: (context) {
+      builder: (controller) {
         return Scaffold(
           extendBody: true,
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
-              Positioned.fill(child: pages[welcomeCtrl.selectedIndex])
+              Positioned.fill(child: pages[controller.selectedIndex]),
             ],
           ),
           // floatingActionButton: FloatingActionButton(
