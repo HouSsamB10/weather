@@ -1,16 +1,79 @@
 # weather
 
-A new Flutter project.
+Weather App v1 is ready  Inspiration in UI/UX design comes with time .
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The project's architecture was organized into clean, distinct folders :  
 
-A few resources to get you started if this is your first Flutter project:
+core :------------------------------------
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    -theme
+    -utils : 
+         -extentions.dart for responsive Ui and size Icons , texts ..
+    -values
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+data :------------------------------------
+
+    -api : 
+        - repositories:
+        - services:
+        -testing:
+    -local_db: local storage ... 
+
+models :------------------------------------
+
+    -models of api and local_db.
+
+modules :------------------------------------
+
+    -home: 
+        -widgets:  all shared widgets module .
+        binding.dart :binding of logique code module .
+        controller.dart :logique code module .
+        view.dart : view of home screen module .
+    -welcome: 
+        -widgets:  all shared widgets module .
+        binding.dart :binding of logique code module .
+        controller.dart :logique code module .
+        view.dart : view of home screen module .
+
+widgets :------------------------------------
+
+   all shared widgets of modules.
+
+translations: ------------------------------------
+
+   logique of multilang ... 
+
+   main.dart   ------------------------------------
+
+I use Dio Package:
+
+    -Dio supports various HTTP methods like GET, POST, PUT, DELETE, etc.
+    -It allows you to add headers, query parameters, and other request configurations easily.
+    -Supports sending and receiving JSON data.
+    -It provides features like interceptors for handling requests and responses, -cancellation of requests, etc.
+    -Dio supports sending files in HTTP requests.
+    -It has a convenient way to handle timeouts and retries.
+
+    
+
+Users can now search for cities globally with an implemented search feature, enhancing usability.
+
+I streamlined state management using GetX, harnessing its reactive nature for efficient UI updates.
+
+Animated lotties were seamlessly integrated using the LottiePackage, elevating the visual appeal.
+
+For network errors, connectivity_plus ensured smooth error handling, ensuring a seamless user experience.
+
+
+
+A dark theme was added to provide users with an alternative visual experience.
+
+
+
+API models and repository were built using OpenWeatherMap data for robust data handling.
+
+- [Explore the weather API at : ](https://openweathermap.org/api)
+ 
