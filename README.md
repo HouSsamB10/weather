@@ -1,7 +1,16 @@
+
+
+
 # weather
 
-Weather App v1 is ready  Inspiration in UI/UX design comes with time .
-
+Weather App v1 is ready Inspiration in UI/UX design comes with time .
+V1 OF THIS APP IS IN BRANCH:
+  *  -DEVELOP
+    -API_INTEGRATION
+    -UI_DESIGN
+    -PROD_IOS
+    -PROD_ANDROID
+    -CLEAN_CODE
 ## Getting Started
 
 The project's architecture was organized into clean, distinct folders :  
@@ -57,7 +66,7 @@ I use Dio Package:
     -Dio supports sending files in HTTP requests.
     -It has a convenient way to handle timeouts and retries.
 
-    
+
 
 Users can now search for cities globally with an implemented search feature, enhancing usability.
 
