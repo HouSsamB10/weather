@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
-
       // translation step
       // translations: Message(),
       // locale: Locale('ar'),

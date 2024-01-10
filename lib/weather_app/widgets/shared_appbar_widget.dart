@@ -34,24 +34,6 @@ class SharedAppBarWidget extends StatelessWidget
           backgroundColor:
               controller.is_dark ? lightBckgColor1 : darkBckgdColor1,
           elevation: 5,
-          leading: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: IconButton(
-              icon: Icon(
-                controller.is_dark ? Icons.language : Icons.language,
-                color: controller.is_dark
-                    ? darkBackgroundColor
-                    : lightBackgroundColor,
-              ),
-              onPressed: () {
-                controller.is_dark
-                    ? controller.is_dark = false
-                    : controller.is_dark = true;
-              },
-            ),
-          ).animate().fadeIn(
-                duration: const Duration(milliseconds: 1000),
-              ),
           actions: [
             Padding(
               padding: const EdgeInsets.all(10.0),
