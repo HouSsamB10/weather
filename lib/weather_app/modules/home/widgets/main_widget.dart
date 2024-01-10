@@ -57,10 +57,11 @@ class MainWidget extends StatelessWidget {
                           ),
                           SingleChildScrollView(
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   child: Text(
                                     '${controller.currentWeatherData.name}'
                                         .toUpperCase(),
@@ -84,6 +85,8 @@ class MainWidget extends StatelessWidget {
                                     Container(
                                       padding: EdgeInsets.only(left: 50),
                                       child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
                                             '${controller.currentWeatherData.weather![0].description}',
